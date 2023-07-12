@@ -5,6 +5,7 @@ import Main from './Layout/Main';
 import Home from './Components/Home/Home';
 import Orders from './Components/Orders/Orders';
 import About from './Components/About/About';
+import { ProductsAndCarts } from './Api/ProductsAndCarts';
 
 function App() {
   const router = createBrowserRouter([
@@ -14,9 +15,11 @@ function App() {
       children: [
         {
           path: '/',
+          loader: ProductsAndCarts,
           element: <Home></Home>
         }, {
           path: '/orders',
+          loader: ProductsAndCarts,
           element: <Orders></Orders>
         },
         {
